@@ -6,10 +6,12 @@
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "97EA0528415F1B4AB1BAFB7C44CDC7078396B1B3" : 9223372036854775807,
     "76c427fc-7fc8-4348-ba2e-3fadbe1aaff0++7466" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "579B3B52-51F1-4630-B4E9-FAEA6C920208",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "97EA0528415F1B4AB1BAFB7C44CDC7078396B1B3" : "",
     "76c427fc-7fc8-4348-ba2e-3fadbe1aaff0++7466" : "SEPaySDK\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SEPaySDK",
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/172.19.6.41:8800\/svn\/preCommon",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "76c427fc-7fc8-4348-ba2e-3fadbe1aaff0++7466"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:TzyTman\/SEPaySDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "97EA0528415F1B4AB1BAFB7C44CDC7078396B1B3"
     }
   ]
 }
