@@ -1,0 +1,133 @@
+//
+//  SEPayManagerDelegate.h
+//  SEPaySDK
+//
+//  Created by yuan on 16/6/23.
+//  Copyright © 2016年 yuan. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+//获取支付列表URL
+#if 1 //测试接口
+#define kPayListuURL @"http://58.250.204.31:18080/sepayment/index.php/payment/paySdk"
+#define kPayURL @"http://opgdev.weilian.cn/payment/pay/pay_app"
+#else//线上接口
+#define kPayListuURL @"http://opg.weilian.cn/opg/index.php/payment/paySdk"
+#endif
+
+//获取支付参数URL
+#if 1 //测试接口
+#define kPayParameterURL @"http://58.250.204.31:18080/sepayment/index.php/payment/paySdk?payment_type_id="
+#else//线上接口
+#define kPayParameterURL @"http://opg.weilian.cn/opg/index.php/payment/paySdk?payment_type_id="
+#endif
+
+//支付应用注册scheme,在Info.plist定义URL types
+#define kappScheme @"SEPaySDK"
+
+/**
+ *  支付平台
+ */
+typedef NS_ENUM(NSInteger, SEPayType) {
+    /**
+     *  支付宝
+     */
+    kSEAliPayPlatform=1,
+    
+    /**
+     *  中国银联
+     */
+    kSEWChinaUnionPay,
+    
+    /**
+     *  微信支付
+     */
+    kSEWXPayPlatform,
+    
+    /**
+     *  其他平台（预留）
+     */
+    kSEOtherPlatform
+};
+
+/**
+ *
+ *  公开支付结果回调
+ *  @param state     YES 成功 NO 失败
+ *  @param err       错误信息
+ *  @param SEPayType 支付终端类型
+ *  @param content   额外信息（预留）
+ */
+typedef void (^SEPublicPayResultBlock)(BOOL state, SEPayType type ,NSError * err, id content);
+
+/**
+ *  支付结果回调
+ *
+ *  @param state                      YES 成功 NO 失败
+ *  @param err                          错误信息
+ *  @param content                  额外信息（预留）
+ */
+typedef void(^SEPayResultBlock)(BOOL state, NSError * err, id content);
+
+/**
+ *  支付接口
+ */
+@protocol SEPayManagerDelegate <NSObject>
+
+@optional
+/**
+ *  发送支付请求
+ *
+ *  @param obj    订单详情
+ *  @param type   支付平台
+ *  @param result 支付结果
+ */
+-(void)sendOrder:(id)obj withPlatform:(SEPayType)type callBackResult:(SEPayResultBlock)result;
+
+/**
+ *  获取支付参数并发起支付请求
+ *
+ *  @param type   平台类型
+ *  @param result 支付结果
+ */
+-(void)payOrderwithPlatform:(SEPayType)type payNo:(NSString *)payNo payVC:(UIViewController *)payVC callBackResult:(SEPayResultBlock)result;
+
+/**
+ *  获取支付列表
+ *  @param payParam  支付参数
+ *  @param result <#result description#>
+ */
+-(void)GetPayListDataBypayParam:(NSDictionary *)payParam callbackResult:(SEPayResultBlock)result;
+
+/**
+ *  根据平台类型获取支付参数
+ *
+ *  @param type   平台类型
+ *  @param result 返回值
+ */
+-(void)getPayParameterWithPlatform:(SEPayType)type payNo:(NSString *)payNo withResult:(SEPayResultBlock)result;
+
+/**
+ *  处理各平台支付结果回调
+ *
+ *  @param url <#url description#>
+ */
+-(void)applicationOpenURL:(NSURL *)url;
+
+/**
+ *  处理非支付返回的状态
+ *
+ */
+-(void)applicationDidBecomeActive;
+
+/**
+ *  注册平台
+ *
+ *  @param key  关键字
+ *  @param type 平台类型,这里一般指微信或者QQ平台
+ *
+ *  @return 注册成功与否
+ */
+-(BOOL)registerAppwithKey:(NSString *)key platform:(SEPayType)type;
+@end

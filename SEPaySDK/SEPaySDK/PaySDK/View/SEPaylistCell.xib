@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SEPaylistCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oln-I2-VJj">
+                        <rect key="frame" x="10" y="10" width="30" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="IEu-LD-quh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sL-hP-v6N">
+                        <rect key="frame" x="55" y="18" width="42" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-fV-JJE">
+                        <rect key="frame" x="10" y="48" width="310" height="1"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Fab-QF-zg8"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="矢量智能对象" translatesAutoresizingMaskIntoConstraints="NO" id="cab-Pq-paV">
+                        <rect key="frame" x="303" y="18" width="7" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7" id="12o-Dp-J8z"/>
+                            <constraint firstAttribute="height" constant="13" id="cD1-ew-LmL"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0sL-hP-v6N" firstAttribute="centerY" secondItem="oln-I2-VJj" secondAttribute="centerY" id="7Jj-7m-mkW"/>
+                    <constraint firstAttribute="trailing" secondItem="fbU-fV-JJE" secondAttribute="trailing" id="BMS-I8-LfY"/>
+                    <constraint firstItem="oln-I2-VJj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="EKS-OE-fLK"/>
+                    <constraint firstItem="cab-Pq-paV" firstAttribute="leading" secondItem="0sL-hP-v6N" secondAttribute="trailing" constant="80" id="H1S-pB-8HP"/>
+                    <constraint firstItem="oln-I2-VJj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="YOT-9o-2bT"/>
+                    <constraint firstItem="cab-Pq-paV" firstAttribute="centerY" secondItem="oln-I2-VJj" secondAttribute="centerY" id="YWI-Fg-zO5"/>
+                    <constraint firstAttribute="trailing" secondItem="cab-Pq-paV" secondAttribute="trailing" constant="10" id="dMk-sU-HMC"/>
+                    <constraint firstItem="0sL-hP-v6N" firstAttribute="leading" secondItem="oln-I2-VJj" secondAttribute="trailing" constant="15" id="dae-0h-Fkc"/>
+                    <constraint firstItem="fbU-fV-JJE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dnM-6c-8gU"/>
+                    <constraint firstAttribute="bottom" secondItem="oln-I2-VJj" secondAttribute="bottom" constant="10" id="dtT-8I-UDj"/>
+                    <constraint firstItem="cab-Pq-paV" firstAttribute="top" secondItem="0sL-hP-v6N" secondAttribute="top" id="iwe-fh-UvF"/>
+                    <constraint firstAttribute="bottom" secondItem="fbU-fV-JJE" secondAttribute="bottom" id="k9G-jT-tkL"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="H1S-pB-8HP"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="icon" destination="oln-I2-VJj" id="sco-0N-e9J"/>
+                <outlet property="platform" destination="0sL-hP-v6N" id="bIM-Sc-F4A"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="矢量智能对象" width="7" height="13"/>
+    </resources>
+</document>
